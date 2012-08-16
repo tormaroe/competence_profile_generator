@@ -9,7 +9,7 @@
   [:div.navbar.navbar-fixed-top
    [:div.navbar-inner
     [:div.container
-     [:a.brand {:href "#"} title]
+     [:a.brand {:href "/"} title]
      [:ul.nav
       [:li [:a {:href "manage-data"} "Data"]]
       [:li [:a {:href "manage-people"} "People"]]
