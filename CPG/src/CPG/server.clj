@@ -1,5 +1,9 @@
 (ns CPG.server
-  (:require [noir.server :as server]))
+  (:require [noir.server :as server])
+  (:require [monger.core :as mg]))
+
+(mg/connect!)
+(mg/set-db! (mg/get-db "competence"))
 
 (server/load-views-ns 'CPG.views)
 

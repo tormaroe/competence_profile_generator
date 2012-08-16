@@ -22,7 +22,9 @@
      [:title title]
      (include-css "/css/bootstrap.min.css")
      [:style {:type "text/css"} "body { padding-top: 60px; padding-bottom:40px; }"]
-     (include-js "/js/bootstrap.min.js")]
+     (include-js "/js/jquery.min.js")
+     (include-js "/js/bootstrap.min.js")
+     (include-js "/js/cpg.js")]
     [:body
      (navbar)
      [:div.container
