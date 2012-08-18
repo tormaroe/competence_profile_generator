@@ -22,6 +22,6 @@
     (splash)
     [:div.row
      (column (element-80p btn-large "manage-data" "Manage key data values"))
-     (column (element-80p btn-large "manage-people" "Manage people"))
+     (column (element-80p btn-large "manage-groups" "Manage snippet groups"))
      (column (element-80p btn-large "manage-cases" "Manage cases"))
      (column (element-80p btn-large-primary "compose-profile" "Make a new profile"))]))

@@ -25,6 +25,15 @@ window.document.cpg = (function () {
                       })
                       .error(function() { alert("error deleting data"); });
                   }
-                }
+                },
+    deleteGroup: function(key) {
+                   if(confirm("ARE YOU SURE? You will lose access to any text snippets in this group.\nYou may fix this however by creating it again with the exact same name.")) {
+                     $.post("/delete-group", {key: key})
+                       .success(function() {
+                         document.location = "/manage-groups";
+                       })
+                       .error(function() { alert("error deleting group"); });
+                   }
+                 }
   };
 })();

@@ -1,19 +1,10 @@
 
-Manage People
--------------
-
-
-Manage cases
-------------
-
-
-Manage text snippets
---------------------
-
 
 Make profile
-------------
 
+Manage data fields ... DONE
+
+Manage text snippets - grouped (Groups: People, Cases, etc.)
 
 
 PDF
