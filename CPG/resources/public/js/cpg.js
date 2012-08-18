@@ -6,6 +6,18 @@ window.document.cpg = (function () {
       .error(function() { alert("error saving data"); });
   };
 
+  var confirmThenPostThenGoto = function(args) {
+    if(confirm(args.message)) {
+      $.post(args.post, args.data)
+        .success(function() {
+          document.location = args.success;
+        })
+        .error(function() { alert(args.error); });
+     }
+  };
+        
+
+
   return {
     updateData: function(key, inputField) {
                   saveData(key, document.getElementById(inputField).value, function() { });
@@ -18,22 +30,22 @@ window.document.cpg = (function () {
                        });
                      },
     deleteData: function(key) {
-                  if(confirm("ARE YOU SURE YOU WANT TO DELETE THIS KEY?\nIf it's is use this will mess up the profile generation..")) {
-                    $.post("/delete-data", {key: key})
-                      .success(function() {
-                        document.location = "/manage-data";
-                      })
-                      .error(function() { alert("error deleting data"); });
-                  }
+                  confirmThenPostThenGoto({
+                    message: "ARE YOU SURE YOU WANT TO DELETE THIS KEY?\nIf it's is use this will mess up the profile generation..",
+                    post: "/delete-data", 
+                    data: {key: key},
+                    success: "/manage-data",
+                    error: "error deleting data"
+                  });
                 },
     deleteGroup: function(key) {
-                   if(confirm("ARE YOU SURE? You will lose access to any text snippets in this group.\nYou may fix this however by creating it again with the exact same name.")) {
-                     $.post("/delete-group", {key: key})
-                       .success(function() {
-                         document.location = "/manage-groups";
-                       })
-                       .error(function() { alert("error deleting group"); });
-                   }
+                   confirmThenPostThenGoto({
+                     message: "ARE YOU SURE? You will lose access to any text snippets in this group.\nYou may fix this however by creating it again with the exact same name.",
+                     post: "/delete-group", 
+                     data: {key: key},
+                     success: "/manage-groups",
+                     error: "error deleting group"
+                   });
                  }
   };
 })();
