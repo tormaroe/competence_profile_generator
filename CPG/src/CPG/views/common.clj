@@ -11,9 +11,9 @@
     [:div.container
      [:a.brand {:href "/"} title]
      [:ul.nav
-      [:li [:a {:href "manage-data"} [:i.icon-list-alt.icon-white] " Merge fields"]]
-      [:li [:a {:href "manage-groups"} [:i.icon-tags.icon-white] " Snippet groups"]]
-      [:li [:a {:href "compose-profile"} [:i.icon-play-circle.icon-white] " Make new profile"]]]]]])
+      [:li [:a {:href "/manage-data"} [:i.icon-list-alt.icon-white] " Merge fields"]]
+      [:li [:a {:href "/manage-groups"} [:i.icon-tags.icon-white] " Snippet groups"]]
+      [:li [:a {:href "/compose-profile"} [:i.icon-play-circle.icon-white] " Make new profile"]]]]]])
 
 (defpartial layout [& content]
   (html5

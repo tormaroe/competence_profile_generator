@@ -22,7 +22,7 @@
                       margin-bottom:10px;
                       text-align:center;"} 
    [:h3 g]
-   [:a.btn.btn-info.btn-mini {:href "#"} 
+   [:a.btn.btn-info.btn-mini {:href (str "/snippetgroup/" g)} 
     [:i.icon-file.icon-white]
     " Snippets"]
    "&nbsp;"
