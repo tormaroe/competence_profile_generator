@@ -49,3 +49,6 @@ window.document.cpg = (function () {
                  }
   };
 })();
+
+$(document).ready(function() {
+});
