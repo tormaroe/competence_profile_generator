@@ -26,7 +26,7 @@
     (map (fn [g]
            (element-80p btn-large-group 
                         (str "snippetgroup/" g)
-                        [:i.icon-tag.icon-white] " " g)))
+                        (common/icon :tag) " " g)))
     (apply column)))
 
 (defpage "/" []
@@ -34,9 +34,9 @@
     (splash)
     [:div.row
      (column (element-80p btn-large "manage-data" 
-                          [:i.icon-list-alt.icon-white] " Manage merge fields")
+                          (common/icon :list-alt) " Manage merge fields")
              (element-80p btn-large "manage-groups" 
-                          [:i.icon-tags.icon-white] " Manage snippet groups"))
+                          (common/icon :tags) " Manage snippet groups"))
      (snippet-groups-column)
      (column (element-80p btn-large-primary "compose-profile" 
-                          [:i.icon-play-circle.icon-white] " Make a new profile"))]))
+                          (common/icon :play-circle) " Make a new profile"))]))

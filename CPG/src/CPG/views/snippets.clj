@@ -4,14 +4,11 @@
   (:use [noir.core :only [defpage defpartial]]))
 
 (defn snippets-list [group]
-  [:table
-    (->>
-      (model/get-snippets-by-group group)
-      (map (fn [snippet]
-             [:tr
-              [:td (:name snippet)]]))
-      (cons :tbody)
-      vec)])
+  [:table 
+   [:tbody
+    (for [snippet (model/get-snippets-by-group group)]
+      [:tr
+       [:td (:name snippet)]])]])
 
 (defpage "/snippetgroup/:group-key" {:keys [group-key]}
   (common/layout
